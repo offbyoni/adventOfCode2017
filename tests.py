@@ -18,5 +18,10 @@ class advent1Test(unittest.TestCase):
             expectedResult = 0
             self.assertEqual(captcha.capt(input), 0)
 
+      def test_91212129_9(self):
+            input = 91212129
+            expectedResult = 9
+            self.assertEqual(captcha.capt(input), 9)
+
 if __name__ == '__main__':
    unittest.main()
