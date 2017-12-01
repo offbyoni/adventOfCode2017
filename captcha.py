@@ -1,3 +1,3 @@
 class captcha():
     def capt(input):
-        return 2
+        return 3
