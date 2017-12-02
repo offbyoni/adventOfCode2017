@@ -12,5 +12,10 @@ class advent1Test2(unittest.TestCase):
             res = captcha2.capt2(input)
             self.assertEqual(res, 0)
 
+      def test_123425_4(self):
+            input = "123425"
+            res = captcha2.capt2(input)
+            self.assertEqual(res, 4)
+
 if __name__ == '__main__':
    unittest.main()
