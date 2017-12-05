@@ -1,5 +1,5 @@
 import unittest
-from passphraseChecker import passphraseChecker
+import passphraseChecker
 
 class advent4Test(unittest.TestCase):
     def test_checkInValidphrase(self):
@@ -16,8 +16,9 @@ class advent4Test(unittest.TestCase):
 
     def test_countValidPassphrases(self):
         passphrases = "aa bb cc dd aa\naa bb cc dd ee\naa bb cc dd aaa"
-        expectedRes = 2
-        self.assertTrue(passphraseChecker.countValidPassphrases(passphrases))
+        res = passphraseChecker.countValidPassphrases(passphrases)
+        self.assertEqual(res, 2)
+
 
 if __name__ == '__main__':
     unittest.main()
