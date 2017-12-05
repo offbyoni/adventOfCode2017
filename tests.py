@@ -10,5 +10,9 @@ class advent4Test(unittest.TestCase):
         passphrase = "aa bb cc dd ee"
         self.assertTrue(passphraseChecker.checkPhraseValid(passphrase))
 
+    def test_checkAnotherValidPassphrase(self):
+        passphrase = "aa bb cc dd aaa"
+        self.assertTrue(passphraseChecker.checkPhraseValid(passphrase))
+
 if __name__ == '__main__':
     unittest.main()
