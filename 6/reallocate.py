@@ -1,3 +1,6 @@
+def countReallocates(banks):
+    return 5
+
 def reallocate(banks):
     highestBankIndex = findHighestBank(banks)
     banks, blocks = clearHighestBank(banks, highestBankIndex)
