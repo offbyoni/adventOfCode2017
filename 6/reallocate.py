@@ -1,16 +1,18 @@
 def reallocate(banks):
-    highestIndex = findHighestBank(banks)
-    # blocks, banks = clearHighestBank(banks, highestIndex)
-    # return redistribute(highestIndex, banks, blocks)
+    highestBankIndex = findHighestBank(banks)
+    # blocks, banks = clearHighestBank(banks, highestBankIndex)
+    # return redistribute(highestBankIndex, banks, blocks)
     pass
 
 def findHighestBank(banks):
     if len(banks) < 1:
         raise Exception('no banks')
     maxValue = max(banks)
-    highestIndex = banks.index(maxValue)
-    return highestIndex
+    highestBankIndex = banks.index(maxValue)
+    return highestBankIndex
 
-def clearHighestBank(banks, highestIndex):
+def clearHighestBank(banks, highestBankIndex):
     if len(banks) < 1:
         raise Exception('no banks')
+    if highestBankIndex > len(banks) - 1 or highestBankIndex < 0:
+        raise Exception('index out of bounds')
