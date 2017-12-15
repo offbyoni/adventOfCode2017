@@ -7,6 +7,9 @@ def countReallocates(banks):
         count += 1
     return count
 
+def reallocateLoopSize(banks):
+    return 4
+
 def reallocate(banks):
     highestBankIndex = findHighestBank(banks)
     banks, blocks = clearHighestBank(banks, highestBankIndex)

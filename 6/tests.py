@@ -70,5 +70,11 @@ class advent6Test(unittest.TestCase):
         count = countReallocates(banks)
         self.assertEqual(count, expectedCount)
 
+    def test_countReallocateLoops(self):
+        banks = [0, 2, 7, 0]
+        expectedCount = 4
+        size = reallocateLoopSize(banks)
+        self.assertEqual(size, 4)
+
 if __name__ == '__main__':
     unittest.main()
