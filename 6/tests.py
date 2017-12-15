@@ -50,5 +50,13 @@ class advent6Test(unittest.TestCase):
         self.assertEqual(banks, [1, 0, 2, 6])
         self.assertEqual(blocks, 30)
 
+    def test_redistribute(self):
+        banks = [1, 0, 2, 6]
+        blocks = 5
+        index = 1
+        banks = redistribute(banks, blocks, index)
+        expectedBanks = [2, 1, 4, 7]
+        self.assertEqual(banks, expectedBanks)
+
 if __name__ == '__main__':
     unittest.main()
