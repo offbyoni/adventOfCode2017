@@ -1,8 +1,7 @@
 def reallocate(banks):
     highestBankIndex = findHighestBank(banks)
-    blocks, banks = clearHighestBank(banks, highestBankIndex)
-    # return redistribute(banks, blocks, highestBankIndex)
-    pass
+    banks, blocks = clearHighestBank(banks, highestBankIndex)
+    return redistribute(banks, blocks, highestBankIndex)
 
 def findHighestBank(banks):
     if len(banks) < 1:

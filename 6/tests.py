@@ -58,5 +58,11 @@ class advent6Test(unittest.TestCase):
         expectedBanks = [2, 1, 4, 7]
         self.assertEqual(banks, expectedBanks)
 
+    def test_reallocate(self):
+        banks = [1, 2, 3, 4, 6]
+        newBanks = reallocate(banks)
+        expectedBanks = [3, 3, 4, 5, 1]
+        self.assertEqual(newBanks, expectedBanks)
+
 if __name__ == '__main__':
     unittest.main()
