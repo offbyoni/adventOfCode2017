@@ -1,4 +1,4 @@
-def countReallocates(banks):
+def reallocationCount(banks):
     previousStates = list()
     count = 0
     while banks not in previousStates:
@@ -7,7 +7,7 @@ def countReallocates(banks):
         count += 1
     return count
 
-def reallocateLoopSize(banks):
+def reallocationLoopSize(banks):
     previousStates = list()
     while banks not in previousStates:
         previousStates.append(list(banks))
@@ -16,11 +16,11 @@ def reallocateLoopSize(banks):
     return len(previousStates) - pos
 
 def reallocate(banks):
-    highestBankIndex = findHighestBank(banks)
+    highestBankIndex = highestBank(banks)
     banks, blocks = clearHighestBank(banks, highestBankIndex)
     return redistribute(banks, blocks, highestBankIndex)
 
-def findHighestBank(banks):
+def highestBank(banks):
     if len(banks) < 1:
         raise Exception('no banks')
     maxValue = max(banks)
