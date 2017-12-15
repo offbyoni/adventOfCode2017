@@ -8,7 +8,12 @@ def countReallocates(banks):
     return count
 
 def reallocateLoopSize(banks):
-    return 4
+    previousStates = list()
+    while banks not in previousStates:
+        previousStates.append(list(banks))
+        banks = reallocate(banks)
+    pos = previousStates.index(banks)
+    return len(previousStates) - pos
 
 def reallocate(banks):
     highestBankIndex = findHighestBank(banks)
