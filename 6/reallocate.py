@@ -1,5 +1,11 @@
 def countReallocates(banks):
-    return 5
+    previousStates = list()
+    count = 0
+    while banks not in previousStates:
+        previousStates.append(list(banks))
+        banks = reallocate(banks)
+        count += 1
+    return count
 
 def reallocate(banks):
     highestBankIndex = findHighestBank(banks)
