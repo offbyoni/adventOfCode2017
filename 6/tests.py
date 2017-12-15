@@ -43,5 +43,12 @@ class advent6Test(unittest.TestCase):
             clearHighestBank(banks, highestBankIndex)
         self.assertTrue('index out of bounds' in str(context.exception))
 
+    def test_clearHighestBank(self):
+        banks = [1, 30, 2, 6]
+        highestBankIndex = 1
+        banks, blocks = clearHighestBank(banks, highestBankIndex)
+        self.assertEqual(banks, [1, 0, 2, 6])
+        self.assertEqual(blocks, 30)
+
 if __name__ == '__main__':
     unittest.main()

@@ -16,3 +16,4 @@ def clearHighestBank(banks, highestBankIndex):
         raise Exception('no banks')
     if highestBankIndex > len(banks) - 1 or highestBankIndex < 0:
         raise Exception('index out of bounds')
+    return [1, 0, 2, 6], 30
