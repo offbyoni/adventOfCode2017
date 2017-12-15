@@ -23,5 +23,11 @@ class advent6Test(unittest.TestCase):
         highestIndex = findHighestBank(banks)
         self.assertEqual(highestIndex, 3)
 
+    def test_clearHighestBankEmpty(self):
+        banks = []
+        with self.assertRaises(Exception) as context:
+            clearHighestBank(banks, 0)
+        self.assertTrue('no banks' in str(context.exception))
+
 if __name__ == '__main__':
     unittest.main()
