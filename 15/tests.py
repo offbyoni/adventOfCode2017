@@ -20,9 +20,25 @@ class advent15Test(unittest.TestCase):
                                 285222916])
 
     def test_judge(self):
-        genB = generator(5, 8921, 48271)
         genA = generator(5, 65, 16807)
+        genB = generator(5, 8921, 48271)
         self.assertEqual(judge(genA, genB), 1)
+
+    def test_generatorModA(self):
+        genA2 = generatorMod(5, 65, 16807, 4)
+        self.assertEqual(list(genA2), [1352636452, \
+                                1992081072, \
+                                530830436, \
+                                1980017072, \
+                                740335192])
+
+    def test_generatorModB(self):
+        genB2 = generatorMod(5, 8921, 48271, 8)
+        self.assertEqual(list(genB2), [1233683848, \
+                                862516352, \
+                                1159784568, \
+                                1616057672, \
+                                412269392])
 
 if __name__ == '__main__':
     unittest.main()
