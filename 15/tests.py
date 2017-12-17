@@ -1,5 +1,6 @@
 import unittest
 from generator import *
+from judge import *
 
 class advent15Test(unittest.TestCase):
     def test_generatorA(self):
@@ -17,6 +18,11 @@ class advent15Test(unittest.TestCase):
                                 1431495498, \
                                 137874439, \
                                 285222916])
+
+    def test_judge(self):
+        genB = generator(5, 8921, 48271)
+        genA = generator(5, 65, 16807)
+        self.assertEqual(judge(genA, genB), 1)
 
 if __name__ == '__main__':
     unittest.main()
